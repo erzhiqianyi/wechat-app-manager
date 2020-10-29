@@ -48,6 +48,4 @@ wrapper {
 	gradleVersion = '6.6.1'
 }
 
-test {
-	useJUnitPlatform()
-}
+

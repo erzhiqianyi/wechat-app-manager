@@ -4,11 +4,11 @@
 项目基于实践领域驱动设计和测试驱动开发,按步骤逐步实现一个 ```REST``` 服务。每实现一个功能点，先写测试，再来写实现逻辑。测试会使用 ```groovy``` 和 ```junit``` 。
 
 ## 应用说明
-这个应用用来管理微信应用以及和微信服务器交互,包括订阅号,服务号,小程序和微信支付。
 
-申请相应应用后,在微信公众平台后台开发配置中填写好相应配置后，在本应用中添加相应微信应用，完成微信服务配置，成为微信开发者。
+实现[微信第三方平台功能](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Third_party_platform_appid.html)。
 
-使用这个应用可以添加微信应用，刷新微信 ```access_token``` ,接收微信消息,调用微信服务接口。
+管理微信应用以及和微信服务器交互,包括订阅号,服务号,小程序和微信支付。支持多商户,商户可以添加成员,管理应用。
+
 
 ## 技术选型
 项目基于 [Spring Boot](https://spring.io/projects/spring-boot),依赖管理使用 [Gradle](https://gradle.org/),部分测试使用  [Groovy](http://groovy-lang.org/) 编写,持久化采用 [Spring Data JPA](https://spring.io/projects/spring-data-jpa),数据库采用 ``[MySQL](https://www.mysql.com/cn/) 和 [reids](https://redis.io/)。
@@ -41,32 +41,22 @@
 - _(F)_ - 工厂(facotry)
 - _(C)_ - 上下文(Context)
 
-### 第一步 - 创建账号-演示
+## 第一步 - 添加微信应用
+参考[微信开放平台的说明](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/api/api_get_authorizer_info.html#business_info-%E8%AF%B4%E6%98%8E),创建一个微信应用,需要一些基本信息，即授权方的基本账号信息。如果开通了微信开放平台第三方平台开发权限,可以直接通过微信接口获取授权方账号基本信息。如果没有开通，则可以手动输入相关信息。
 
-在 **微信应用管理<sub>_C_</sub>** 上下文中,用户为应用管理者,隶属于一个团队，团队成员有不同权限。
+用户可以添加 **微信应用**<sub>_(E)_</sub> 。
+为了区分应用属于哪一个商户,微信应用应该有一个 **商户id**<sub>_(EP)_</sub>。
+需要的授权方账号信息有 **授权账号基本信息**<sub>_(VO)_</sub>和 **授权信息**<sub>_(VO)_</sub>。
+目前暂不考虑授权信息,授权信息需要开通微信开放平台第三方平台开发权限,为了达到相同的效果，需要获取微信应用的 **开发配置**<sub>_(VO)_</sub> 和 **应用密钥**<sub>_(VO)_</sub>。
 
-用户要创建 **账号**<sub>_(E)_</sub> 后才能使用应用。
-如何区分不同账号? 账号有 **唯一编号**<sub>_EP_</sub>, **用户唯一编号自动生成**<sub>_(DS)_</sub>。
-要区分用户, 账号要有  **名字**<sub>_EP_</sub> 和 **邮件地址**<sub>_EP_</sub>。
- 邮件地址是 **邮箱**<sub>_(VO)_</sub> , 有自己的校验规则。
+账号基本信息有 **昵称**<sub>_(VOP)_</sub>,**头像**<sub>_(VOP)_</sub>,**原始 ID**<sub>_(VOP)_</sub>,**主体名称**<sub>_(VOP)_</sub>,**应用编号**<sub>_(VOP)_</sub>,**应用类型**<sub>_(VOP)_</sub>,**认证状态**<sub>_(VOP)_</sub>。
 
-#### To do
-切换到分支 ```step-1-finish```,查看演示代码。
-
-### 第二步 - 创建团队
-用户可以创建 ***团队***<sub>_(E)_</sub>.
-
-***团队***<sub>_(E)_</sub>必须要有 **名字**<sub>_(EP)_</sub> 和 **团队类型**<sub>_(EP)_</sub>,
-
-**团队类型**<sub>_(EP)_</sub>, 分为 ```个人```,```组织``` 。
-
-用户需要知道团队有多少个微信应用。
-
-为了完成这个需卡，应用需要显示 **团队有多少个微信应用**<sub>_(EP)_</sub> .
-
-一个用户只能创建一个团队
-
-
+微信应用不能重复,通过应用编号判断应用是否重复,基本信息不能为空。
+开发配置和应用密钥可以为空。
+### To do
+check _step-1-start_ 分支。
+实现  ```WechatAppController.createApp(...)``` 方法,运行单元测试。
+测试通过后，切换到 _step-1-finish_ 分支。 
 
 
 
