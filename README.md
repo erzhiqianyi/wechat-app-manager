@@ -22,6 +22,14 @@
 - [project-manager](https://github.com/mkopylec/project-manager)
 - [使用DDD实现社区服务系统](https://github.com/daoqidelv/community-ddd-demo)
 
+## 错误码说明 
+业务操作失败，统一返回错误码和错误信息。错误码用数字表示，示例如下
+```json
+{
+    "errorCode":40001,
+    "errorMsg":"invlid appid ,appid can't be null'
+}
+```
 ## 实现步骤
 
 每个分支代表一个任务。

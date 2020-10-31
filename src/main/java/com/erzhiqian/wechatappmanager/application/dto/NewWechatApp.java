@@ -9,8 +9,14 @@ import lombok.Data;
  */
 @Data
 public class NewWechatApp {
+
     private String appId;
 
+    private NewAuthorizerInfo authorizerInfo;
+
+    private NewAppSecret appSecret;
+
+    private NewDevProfile devProfile;
 
 
 }
