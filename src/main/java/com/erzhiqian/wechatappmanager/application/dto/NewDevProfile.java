@@ -9,6 +9,7 @@ import lombok.Data;
  */
 @Data
 public class NewDevProfile {
+
     private String token;
 
     private String encodingAESKey;
@@ -16,4 +17,6 @@ public class NewDevProfile {
     private String dataSignType;
 
     private String dataContentType;
+
+
 }
