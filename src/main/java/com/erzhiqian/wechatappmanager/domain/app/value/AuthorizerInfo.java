@@ -1,7 +1,5 @@
 package com.erzhiqian.wechatappmanager.domain.app.value;
 
-import java.security.Principal;
-
 /**
  * @author 二之前一
  * @CreateDate 2020年10月31日
@@ -14,12 +12,12 @@ public class AuthorizerInfo {
 
     private String username;
 
-    private Principal  principal;
+    private AuthenticatePrincipal  principal;
 
     private Image qrCodeUrl;
 
 
-    public AuthorizerInfo(String nickname, String username, Principal principal) {
+    public AuthorizerInfo(String nickname, String username, AuthenticatePrincipal principal) {
         this.nickname = nickname;
         this.username = username;
         this.principal = principal;

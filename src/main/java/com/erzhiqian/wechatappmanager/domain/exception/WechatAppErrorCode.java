@@ -1,4 +1,4 @@
-package com.erzhiqian.wechatappmanager.domain.app.value;
+package com.erzhiqian.wechatappmanager.domain.exception;
 
 import com.erzhiqian.wechatappmanager.infrastructure.error.ErrorCode;
 

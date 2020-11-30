@@ -1,5 +1,6 @@
 package com.erzhiqian.wechatappmanager.domain.app.value;
 
-public class AppType {
+public interface AppState {
+
 
 }
