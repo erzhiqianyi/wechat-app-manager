@@ -18,5 +18,7 @@ public class NewDevProfile {
 
     private String dataContentType;
 
+    private String serverDomain;
 
+    private String businessDomain;
 }

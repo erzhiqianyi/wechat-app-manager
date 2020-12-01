@@ -1,7 +1,7 @@
 package com.erzhiqian.wechatappmanager.application;
 
 
-import com.erzhiqian.wechatappmanager.application.dto.NewWechatApp;
+import com.erzhiqian.wechatappmanager.application.dto.NewPlatformApp;
 import com.erzhiqian.wechatappmanager.domain.tenant.Tenant;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class WechatAppService {
 
-    public void createApp(Tenant tenant, NewWechatApp newApp) {
+
+    public void createOpenPlatFomApp(Tenant tenant, NewPlatformApp newPlatformApp) {
 
     }
 }

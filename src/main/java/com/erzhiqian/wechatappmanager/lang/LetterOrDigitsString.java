@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
  */
 public class LetterOrDigitsString {
     private String value;
+
     public LetterOrDigitsString(String str) {
         if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("illegal string. string must be letter or digits");
