@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.http.HttpStatus.CREATED;
 
 /**
+ *
+ * 第三方平台应用接口
+ *
  * @author 二之前一
  * @CreateDate 2020年10月29日
  */
