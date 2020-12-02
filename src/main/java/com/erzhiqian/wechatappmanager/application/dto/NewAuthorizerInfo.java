@@ -12,7 +12,6 @@ import lombok.Data;
 @Data
 public class NewAuthorizerInfo {
 
-
     /**
      * 昵称
      */

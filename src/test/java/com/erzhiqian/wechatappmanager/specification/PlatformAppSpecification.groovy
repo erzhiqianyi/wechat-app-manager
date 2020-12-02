@@ -1,37 +1,17 @@
 package com.erzhiqian.wechatappmanager.specification
 
 import com.erzhiqian.wechatappmanager.BasicSpecification
-import com.erzhiqian.wechatappmanager.application.dto.NewAuthorizerInfo
 import com.erzhiqian.wechatappmanager.application.dto.NewWechatApp
-import com.erzhiqian.wechatappmanager.application.dto.platformapp.PlatformAppDevProfile
 
 import static org.springframework.http.HttpStatus.CREATED
 
-class WechatSpecification extends BasicSpecification {
+class PlatformAppSpecification extends BasicSpecification {
 
     def tenantId = "gh_82bdb360393c"
 
 
-    protected NewAuthorizerInfo createNewAuthorizerInfo(
-            String nickName, String headImage, String username,
-            String principalName, String appType, String certifiedState) {
-        def newAuthorizerInfo = new NewAuthorizerInfo(nickname: nickName, headImage: headImage,
-                username: username, principalName: principalName,
-                appType: appType, certifiedState: certifiedState)
-        return newAuthorizerInfo;
-
-    }
-
-    protected PlatformAppDevProfile createNewDevProfile(String token, String encodingAESKey,
-                                                        String dataSignType, String dataContentType) {
-        def newDevProfile = new PlatformAppDevProfile(token: token, encodingAESKey: encodingAESKey,
-                dataSignType: dataSignType, dataContentType: dataContentType);
-        return newDevProfile;
-    }
-
-    def "should add platform app "() {
+    def "should create platform app "() {
         given:
-        def newAppSecret = createAppSecret('3d9226db5fc21c3574ab454975de8e20')
         def nickName = "test"
         def headImage = "https://wx.qlogo.cn/mmhead/Q3auHgzwzM6fHe3NhQBfH4ibsxZk8ktOXRV2Ws7dKDqnlaREKORdHNw/0"
         def username = "gh_852ad136c363"
@@ -89,6 +69,7 @@ class WechatSpecification extends BasicSpecification {
 
 
     }
+
 
 
 

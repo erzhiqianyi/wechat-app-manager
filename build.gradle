@@ -30,10 +30,11 @@ dependencies {
 	compile group: 'com.googlecode.log4jdbc', name: 'log4jdbc', version: '1.2'
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
 
-	runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'com.h2database:h2'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -43,6 +44,7 @@ dependencies {
 	testCompile group: 'com.github.tomakehurst', name: 'wiremock-jre8', version: '2.25.1'
 	testCompile group: 'org.awaitility', name: 'awaitility-groovy', version: '4.0.2'
 	testCompile group: 'com.googlecode.log4jdbc', name: 'log4jdbc', version: '1.2'
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
 }
 
 wrapper {
