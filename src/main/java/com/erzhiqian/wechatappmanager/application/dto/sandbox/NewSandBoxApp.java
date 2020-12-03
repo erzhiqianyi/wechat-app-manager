@@ -24,6 +24,6 @@ public class NewSandBoxApp {
     /**
      * 测试公众号开发配置
      */
-    private SandboxAppDevProfile devProfile;
+    private NewSandboxAppDevProfile devProfile;
 
 }

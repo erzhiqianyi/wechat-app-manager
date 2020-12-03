@@ -18,11 +18,6 @@ public class NewAuthorizerInfo {
     private String nickname;
 
     /**
-     * 头像
-     */
-    private String headImage;
-
-    /**
      * 原始id
      */
     private String username;
@@ -31,5 +26,12 @@ public class NewAuthorizerInfo {
      * 主体名称
      */
     private String principalName;
+
+
+    /**
+     * 头像
+     */
+    private String headImage;
+
 
 }
