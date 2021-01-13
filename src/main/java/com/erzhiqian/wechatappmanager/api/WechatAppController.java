@@ -1,11 +1,9 @@
 package com.erzhiqian.wechatappmanager.api;
 
-import com.erzhiqian.wechatappmanager.application.dto.NewWechatApp;
-import com.erzhiqian.wechatappmanager.domain.tenant.Tenant;
+import com.erzhiqian.wechatappmanager.application.WechatAppService;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.*;
-
-import static org.springframework.http.HttpStatus.CREATED;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 /**
@@ -17,11 +15,11 @@ import static org.springframework.http.HttpStatus.CREATED;
 @Log4j2
 public class WechatAppController {
 
+    private WechatAppService wechatAppService;
 
-    @ResponseStatus(CREATED)
-    @PostMapping
-    public void createApp(@PathVariable("tenantId") Tenant tenant, @RequestBody NewWechatApp newApp) {
-        log.error(tenant);
-        log.error(newApp);
+    public WechatAppController(WechatAppService wechatAppService) {
+        this.wechatAppService = wechatAppService;
     }
+
+
 }

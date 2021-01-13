@@ -10,13 +10,13 @@ import lombok.ToString;
 @ToString
 public class Tenant {
 
-    private String id;
+    private final String id;
 
     public Tenant(String id) {
         this.id = id;
     }
 
-    public String id(){
+    public String id() {
         return id;
     }
 

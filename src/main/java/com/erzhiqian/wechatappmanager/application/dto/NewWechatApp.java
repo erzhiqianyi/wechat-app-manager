@@ -14,9 +14,5 @@ public class NewWechatApp {
 
     private NewAuthorizerInfo authorizerInfo;
 
-    private NewAppSecret appSecret;
-
-    private NewDevProfile devProfile;
-
 
 }
